@@ -151,15 +151,15 @@ img {
     border-radius: 2rem;           
     background-color: #262626;
     color: #FAFAFA;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.4;
 }
 
 .chip img {
     display: inline-block;
     width: auto;
-    height: 1.1rem;
-    margin: 0 0.4rem 0 0;
+    height: 1.9rem;
+    margin: 0 0.2rem 0 0;
     vertical-align: middle;
 }
 
