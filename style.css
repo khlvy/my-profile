@@ -1,0 +1,272 @@
+/* Ghann's World 
+   Colors used:
+   #0A0A0A page background    #171717 chips / photo backdrop
+   #262626 borders            #525252 link underline
+   #A3A3A3 secondary text     #E5E5E5 main text
+   #FAFAFA headings / hover
+*/
+
+/* Base */
+body {
+    display: flex;                 /* Flexbox: sidebar | content */
+    margin: 0;
+    background-color: #0A0A0A;
+    color: #E5E5E5;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: #FAFAFA;
+    font-family: "JetBrains Mono", Consolas, "Courier New", monospace;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* Headings */
+h1 { font-size: 3rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+
+p { margin: 0 0 1rem; }
+
+a {
+    color: #E5E5E5;
+    text-decoration-line: underline;
+    text-decoration-color: #525252;
+}
+
+a:hover {
+    color: #FAFAFA;
+    text-decoration-color: #FAFAFA;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Sidebar */
+.sidebar {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    flex: 0 0 15rem;               /* 15rem + 3rem padding = 18rem wide */
+    padding: 2rem 1.5rem;
+    border-right: 1px solid #262626;
+    font-family: "JetBrains Mono", Consolas, "Courier New", monospace;
+    font-size: 1rem;
+}
+
+.brand {
+    text-decoration-line: none;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+}
+
+.sidebar nav li { margin-bottom: 0.75rem; }
+
+.sidebar nav a {
+    color: #A3A3A3;
+    text-decoration-line: none;
+}
+
+.sidebar nav a:hover { color: #E5E5E5; }
+
+.sidebar-contact {
+    margin: 2rem 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid #262626;
+    color: #A3A3A3;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Main content column */
+.content {
+    flex: 1;
+    max-width: 52rem;
+    margin: 0 auto;                /* centers the column beside the sidebar */
+    padding: 4rem 2rem;
+}
+
+/* Hero: photo next to bio (Flexbox) */
+.hero {
+    display: flex;
+    flex-wrap: wrap;               /* bio drops below the photo if space runs out */
+    align-items: center;
+    gap: 2.5rem;
+    padding-bottom: 3rem;
+}
+
+.hero-photo {
+    flex: 0 0 18rem;
+    background-color: #171717;
+}
+
+.tagline {
+    margin: 0.75rem 0 1.25rem;
+    color: #A3A3A3;
+    font-family: "JetBrains Mono", Consolas, "Courier New", monospace;
+    font-size: 1rem;
+}
+
+.hero-text {
+    flex: 1 1 20rem;
+}
+
+.hero-text h2 { margin-bottom: 0.75rem; }
+
+.hero-text p {
+    max-width: 30rem;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #A3A3A3;
+}
+
+.hero-text p:last-child { margin-bottom: 0; }
+.hero-text strong { color: #FAFAFA; }
+
+/* Quick facts strip */
+.facts {
+    display: flex;
+    flex-wrap: wrap;               /* columns wrap instead of overflowing */
+    margin: 0 0 1rem;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid #262626;
+    border-bottom: 1px solid #262626;
+}
+
+.facts li {
+    flex: 1 1 9rem;
+    padding: 1.25rem;
+}
+
+.facts li + li { border-left: 1px solid #262626; }
+
+.facts strong {
+    display: block;
+    font-family: "JetBrains Mono", Consolas, "Courier New", monospace;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #FAFAFA;
+}
+
+.facts span {
+    color: #A3A3A3;
+    font-size: 1rem;
+}
+
+/* Sections */
+main section {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid #262626;
+}
+
+main section > h2 { margin-bottom: 1.5rem; }
+
+/* Things I Love: wrapping chips (Flexbox) */
+.loves {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.loves li {
+    padding: 0.375rem 0.875rem;
+    border: 1px solid #262626;
+    border-radius: 2rem;
+    background-color: #171717;
+    font-size: 1rem;
+}
+
+/* Project cards: box model on display */
+article {
+    margin: 0 0 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid #262626;
+    border-radius: 0.5rem;
+}
+
+article img {
+    margin: 1rem 0;
+    border: 1px solid #262626;
+    border-radius: 0.25rem;
+}
+
+article p { max-width: 36rem; }
+article p:last-child { margin-bottom: 0; }
+
+/* Footer */
+footer {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #262626;
+    color: #A3A3A3;
+    font-size: 1rem;
+}
+
+footer p { margin: 0; }
+
+/* Phones: stack everything (one media query) */
+@media (max-width: 600px) {
+    body { flex-direction: column; }
+
+    .sidebar {
+        position: static;
+        flex: none;
+        padding: 1.25rem;
+        border-right: none;
+        border-bottom: 1px solid #262626;
+    }
+
+    .sidebar nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1.25rem;
+        margin-top: 1rem;
+    }
+
+    .sidebar nav li { margin-bottom: 0; }
+
+    .sidebar-contact { display: none; }
+
+    .content { padding: 2rem 1.25rem; }
+
+    h1 { font-size: 2.25rem; }
+
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .hero-photo {
+        flex: none;                /* undo the 18rem basis when stacked */
+        width: 100%;
+        max-width: 18rem;
+    }
+
+    .hero-text { flex: none; }     /* undo the 20rem basis when stacked */
+
+    .facts { flex-direction: column; }
+
+    .facts li { flex: none; }      /* undo the 9rem basis when stacked */
+
+    .facts li + li {
+        border-left: none;
+        border-top: 1px solid #262626;
+    }
+}
